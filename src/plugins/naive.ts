@@ -1,8 +1,8 @@
 import type { App } from 'vue';
-import { create, NInput } from 'naive-ui';
+import { create, NConfigProvider } from 'naive-ui';
 
 const naive = create({
-  components: [NInput]
+  components: [NConfigProvider]
 });
 
 export function setupNaive(app: App<Element>): void {

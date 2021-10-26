@@ -1,5 +1,7 @@
 <template>
-  <div>233</div>
+  <div>
+    <n-input></n-input>
+  </div>
 </template>
 
 <script setup lang="ts"></script>

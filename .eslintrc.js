@@ -50,20 +50,7 @@ module.exports = {
     'vue/multiline-html-element-content-newline': 'off',
     'vue/singleline-html-element-content-newline': 'off',
     'vue/attribute-hyphenation': 'off',
-    'vue/require-default-prop': 'off',
-    'vue/script-setup-uses-vars': 'off',
-    'vue/html-self-closing': [
-      'error',
-      {
-        html: {
-          void: 'always',
-          normal: 'never',
-          component: 'always'
-        },
-        svg: 'always',
-        math: 'always'
-      }
-    ]
+    'vue/require-default-prop': 'off'
   },
   globals: {
     defineProps: 'readonly',
