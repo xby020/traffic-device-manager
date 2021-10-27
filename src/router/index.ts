@@ -11,8 +11,18 @@ Object.keys(modules).forEach((key) => {
   routeModuleList.push(...modList);
 });
 
+// dashboard
+export const DashboardRoute: RouteRecordRaw = {
+  path: '/',
+  name: 'Root',
+  redirect: '/dashboard',
+  meta: {
+    title: 'Dashboard'
+  }
+};
+
 // 普通路由，无需验证权限
-export const constantRouter: any[] = [];
+export const constantRouter: any[] = [DashboardRoute, ...routeModuleList];
 
 // 创建实例
 const router = createRouter({

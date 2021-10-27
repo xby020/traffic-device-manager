@@ -1,12 +1,11 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router';
+import router from '@/router/index';
 import { createHead } from '@vueuse/head';
+import 'virtual:windi.css';
 
 import { setupNaive } from './plugins';
 import { setupStore } from '@/store';
-
-import './assets/index.postcss';
 
 const head = createHead();
 const app = createApp(App);

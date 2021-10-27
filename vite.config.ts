@@ -2,6 +2,7 @@ import * as path from 'path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import pkg from './package.json';
+import WindiCSS from 'vite-plugin-windicss';
 
 process.env.VITE_APP_VERSION = pkg.version;
 if (process.env.NODE_ENV === 'production') {
@@ -10,6 +11,7 @@ if (process.env.NODE_ENV === 'production') {
 
 export default defineConfig({
   plugins: [
+    WindiCSS(),
     vue({
       script: {
         refSugar: true
