@@ -3,6 +3,7 @@ import App from './App.vue';
 import router from '@/router/index';
 import { createHead } from '@vueuse/head';
 import 'virtual:windi.css';
+import '@icon-park/vue-next/styles/index.css';
 
 import { setupNaive } from './plugins';
 import { setupStore } from '@/store';
