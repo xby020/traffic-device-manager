@@ -6,31 +6,27 @@
     :theme-overrides="themeOverrides"
     class="app"
   >
-    <Application>
-      <router-view></router-view>
-    </Application>
+    <n-theme-editor>
+      <Application>
+        <router-view></router-view>
+      </Application>
+    </n-theme-editor>
   </n-config-provider>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { dateZhCN, zhCN, darkTheme, useOsTheme } from 'naive-ui';
-import { themeOverrides } from '@/plugins/naive';
+import { dateZhCN, zhCN, darkTheme, NThemeEditor } from 'naive-ui';
 import { useThemeStore } from '@/store/modules/theme';
 import Application from '@/components/Application.vue';
 
 const themeStore = useThemeStore();
 const theme = computed(() => {
-  const isDark = themeStore.isDark;
-  const usingOsTheme = themeStore.usingOsTheme;
-
-  if (usingOsTheme) {
-    // 获取OS主题设置
-    const osThemeRef = useOsTheme();
-    return osThemeRef.value === 'dark' ? darkTheme : null;
-  } else {
-    return isDark ? darkTheme : null;
-  }
+  const isDark = themeStore.getDark;
+  return isDark ? darkTheme : null;
+});
+const themeOverrides = computed(() => {
+  return themeStore.getThemeOverrides;
 });
 </script>
 
