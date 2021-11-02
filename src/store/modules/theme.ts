@@ -8,8 +8,7 @@ export const useThemeStore = defineStore('theme', {
   state: () => {
     return {
       settingDark: false,
-      usingOsTheme: false,
-      themeColor: themeColor.light
+      usingOsTheme: false
     };
   },
   getters: {

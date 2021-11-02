@@ -15,20 +15,7 @@
     <!-- right -->
     <div class="flex justify-end content-center items-center">
       <!-- Toolbox -->
-      <n-button circle class="mx-4">
-        <template #icon>
-          <icon-park type="dark-mode"></icon-park>
-        </template>
-      </n-button>
-      <n-switch>
-        <template #checked>
-          <icon-park type="sun"></icon-park>
-        </template>
-        <template #unchecked>
-          <icon-park type="dark-mode"></icon-park>
-        </template>
-      </n-switch>
-
+      <layout-toolbox class="h-full"></layout-toolbox>
       <!-- user -->
       <n-avatar
         class="mx-4"
@@ -41,31 +28,24 @@
 </template>
 
 <script lang="ts">
-import { NButton, NAvatar, NSwitch } from 'naive-ui';
-import { IconPark } from '@icon-park/vue-next/es/all';
-import { computed, defineComponent } from 'vue-demi';
+import { NButton, NAvatar } from 'naive-ui';
+import { defineComponent } from 'vue-demi';
 import LayoutMenu from './components/Menu/index.vue';
-import { useThemeStore } from '@/store/modules/theme';
+import LayoutToolbox from './components/Toolbox/index.vue';
+
 export default defineComponent({
   name: 'LayoutHeader',
   components: {
-    IconPark,
     LayoutMenu,
+    LayoutToolbox,
     NButton,
-    NAvatar,
-    NSwitch
+    NAvatar
   },
   data() {
     return {
       darkMode: false
     };
   },
-  setup() {
-    const isDark = computed(() => {
-      const themeStore = useThemeStore();
-      return themeStore.getDark;
-    });
-    return { isDark };
-  }
+  setup() {}
 });
 </script>
